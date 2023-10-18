@@ -1,0 +1,71 @@
+[
+    {
+      "id": 1,
+      "picture": "https://i.ibb.co/SrDdrg8/download.jpg",
+      "title": "Toyota ",
+      "card_bg": "#187bcd",
+      "button_bg": "#0052ff33",
+      "description": "A wedding is a celebration or ceremony of marriage. Besides being a formal way to mark the union of two people, weddings can be a lot of fun too. The earliest meaning of wedding was simply the state of being married.",
+      "price": 400
+    },
+    {
+      "id": 2,
+      "picture": "https://i.ibb.co/WWVVqPY/photo-1563694983011-6f4d90358083.jpg",
+      "title": "Mercedes",
+      "card_bg": "#9cbccc",
+      "text_color": "#F87147",
+      "button_bg": "#f8714726",
+      "description": "A birthday celebration is occasion for joy, laughter, and connection, and the perfect birthday party invitation kicks all of this off in style. Whether it’s a milestone birthday, a themed or surprise party, or a simple, intimate gathering.",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "picture": "https://i.ibb.co/Z2htzhG/P90385570-the-new-bmw-communication-logo-bmw-new-corporate-identity-for-online-and-offline-communica.jpg",
+      "title": "B M W",
+      "category_bg": "#187bcd",
+      "card_bg": "#187bcd",
+      "text_color": "#79C23F",
+      "button_bg": "#79c23f26",
+      "description": "An anniversary is the date on which an event took place or an institution was founded in a previous year, and may also refer to the commemoration or celebration of that event. The word was first used for Catholic feasts to commemorate saints.",
+      "price": 125
+    },
+  {
+      "id": 4,
+      "picture": "https://i.ibb.co/S3DQqd3/ford-logo-on-car-grille-KJGMW1.jpg",
+      "title": "Ford",
+      "category_bg": "#9cbccc",
+      "card_bg": "#9cbccc",
+      "text_color": "#FF444A",
+      "button_bg": "#ff444a26",
+      "description": "Engagement parties are a great way to introduce both sides of the family as well as different friendship groups. Everyone gets to mingle which means your wedding is likely to be much more fun and relaxed.",
+      "price": 191
+    },
+  
+  {
+      "id": 5,
+      "picture": "https://i.ibb.co/TbqLknB/photo-1623173103439-fd360deedad4.jpg",
+      "title": "Ferrari",
+      "category_bg": "#187bcd",
+      "card_bg": "#187bcd",
+      "text_color": "#79C23F",
+      "button_bg": "#79c23f26",
+      "description": "A retirement party is the opportunity to celebrate the retiree's past accomplishments as well as their future endeavors.so hire us early as soon as possible",
+      "price": 199
+    },
+  
+  
+    {
+      "id": 6,
+      "picture": "https://i.ibb.co/Lt7ghpV/9afded4adf3d90be93854870ccd3f352.jpg",
+      "title": "Lambor gini",
+      "category_bg": "#F87147",
+      "card_bg": "#9cbccc",
+      "text_color": "#F87147",
+      "button_bg": "#f8714726",
+      "description":"A baby shower is a party centered on gift-giving to celebrate the delivery or expected birth of a child, and the transformation of a woman into a mother.it will be very enjoyable for you if u will hire us ",
+      "price": 290
+    }
+  
+    
+  ]
+  
