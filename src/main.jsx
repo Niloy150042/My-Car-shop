@@ -17,6 +17,8 @@ import My_cart from './components/My_cart.jsx';
 import Addtoproduct from './components/Addtoproduct.jsx';
 import Gallery from './components/Gallery.jsx';
 import Services from './components/Services.jsx';
+import Card from './components/Card.jsx';
+import Carddetails from './components/Carddetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
      {
       path:'/services',
       element:<Services></Services>
+     },
+     {
+      path:'/card/:id',
+      element:<Carddetails></Carddetails>
      }
 
 

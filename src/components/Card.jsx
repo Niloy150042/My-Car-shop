@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 
 
 const Card = ({car}) => {
 
-    const {picture,card_bg,category,title}=car
+    const {id,picture,card_bg,category,title}=car
 
     return (
+        <Link to={`card/${id}`}>
         <div className="card  bg-base-100 shadow-xl h-[300px] image-full ">
         <figure><img src={picture} alt="Shoes" className="w-[405px]"  /></figure>
         <div className="card-body">
@@ -13,7 +15,7 @@ const Card = ({car}) => {
          
     
         </div>
-      </div>
+      </div></Link>
 
 
     );
