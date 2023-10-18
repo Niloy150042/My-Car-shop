@@ -38,6 +38,10 @@ const router = createBrowserRouter([
      {
       path:'/addproduct',
       element:<Addtoproduct></Addtoproduct>
+     },
+     {
+      path:'/galery',
+      element:
      }
 
          
