@@ -29,6 +29,8 @@ const Navbar = () => {
         
       </li>
       <Link to='/cart' ><button className="btn bg-gray-400 text-black">My-cart</button></Link>
+      <Link to='/galery' ><button className="btn bg-gray-400 text-black"> gallery </button></Link>
+      <Link to='/services' ><button className="btn bg-gray-400 text-black">Services</button></Link>
     </ul>
   </div>
   <div className="navbar-end flex gap-3 ">
