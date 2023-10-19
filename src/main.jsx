@@ -15,10 +15,11 @@ import Banner from './components/Banner.jsx';
 import Cards from './components/Cards.jsx';
 import My_cart from './components/My_cart.jsx';
 import Addtoproduct from './components/Addtoproduct.jsx';
-import Gallery from './components/Gallery.jsx';
-import Services from './components/Services.jsx';
-import Card from './components/Card.jsx';
+
+
 import Carddetails from './components/Carddetails.jsx';
+import Details from './components/Details.jsx';
+import Errorpage from './components/Errorpage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,19 +44,22 @@ const router = createBrowserRouter([
       path:'/addproduct',
       element:<Addtoproduct></Addtoproduct>
      },
-     {
-      path:'/galery',
-      element:<Gallery></Gallery>
+     
 
-     },
 
      {
-      path:'/services',
-      element:<Services></Services>
+      path:'/card/:title',
+      element:<Carddetails></Carddetails>,
+      loader : ()=>fetch('http://localhost:5000/brand')
      },
      {
-      path:'/card/:id',
-      element:<Carddetails></Carddetails>
+      path:'/details/:_id',
+      element:<Details></Details>,
+      loader : ()=>fetch('http://localhost:5000/brand')
+     },
+     {
+      path:'/*',
+       element:<Errorpage></Errorpage>
      }
 
 

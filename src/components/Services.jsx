@@ -4,7 +4,7 @@ const Services = () => {
     return (
         <div>
             here are our services
-        </div>
+        </div> 
     );
 };
 

@@ -1,5 +1,5 @@
 
-
+import Swal from 'sweetalert2'
 const Addtoproduct = () => {
    
     const handlesubmit =e=>{
@@ -11,7 +11,30 @@ const Addtoproduct = () => {
         const description =e.target.description.value
         const carpicture =e.target.picture.value
 
-        console.log(name,brandname,type,price,description,carpicture);
+       
+
+        const brand ={name,brandname,type,price,description,carpicture}
+         fetch('http://localhost:5000/brand',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(brand)
+
+         })
+         .then(res=>res.json())
+         .then(data=>{
+            console.log(data);
+            if(data.insertedId )
+            {
+                Swal.fire({
+                    title: 'success!',
+                    text: 'user added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+         })
        
     }
 

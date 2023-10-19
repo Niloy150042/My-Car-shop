@@ -6,7 +6,7 @@ const Card = ({car}) => {
     const {id,picture,card_bg,category,title}=car
 
     return (
-        <Link to={`card/${id}`}>
+        <Link to={`card/${title}`}>
         <div className="card  bg-base-100 shadow-xl h-[300px] image-full ">
         <figure><img src={picture} alt="Shoes" className="w-[405px]"  /></figure>
         <div className="card-body">
