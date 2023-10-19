@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Matchingcard from "./Matchingcard";
+import Slider from "./Slider";
 
 
 const Carddetails = () => {
@@ -36,11 +37,16 @@ const Carddetails = () => {
   
 
     return (
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
+     <div>
+         <Slider></Slider>
+
+         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
            {
             brand.map(card=><Matchingcard key={card._id} card={card}></Matchingcard>)
            }
         </div>
+
+     </div>
     );
 };
 

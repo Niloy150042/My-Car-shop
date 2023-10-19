@@ -5,12 +5,8 @@ const Matchingcard = ({card}) => {
 
     const {carpicture,description,price,brandname,name,_id}=card
     return (
-  <div>
 
-
-
-
-{/*  showing matching cards */}
+   <div>
 <div class="card card-side bg-blue-200 shadow-xl">
   <figure><img src={carpicture} className=" lg:h-[200px] lg:w-[300px]  rounded-2xl" alt="Movie"/></figure>
   <div class="card-body">
@@ -24,7 +20,8 @@ const Matchingcard = ({card}) => {
 
   </div>
 </div>
-  </div>
+   </div>
+   
     );
 };
 

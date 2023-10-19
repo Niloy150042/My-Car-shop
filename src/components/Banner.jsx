@@ -1,6 +1,5 @@
 import Cards from "./Cards";
 
-
 const Banner = () => {
     return (
       <div>
@@ -16,6 +15,9 @@ const Banner = () => {
        
        
       </div>
+
+  
+      
       <Cards></Cards>
       </div>
      
