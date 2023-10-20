@@ -1,6 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-const Addtoproduct = () => {
-  const handlesubmit = (e) => {
+
+const Updattedcart = () => {
+  const carts = useLoaderData();
+
+  const handleupdate = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const brandname = e.target.brandname.value;
@@ -10,8 +14,8 @@ const Addtoproduct = () => {
     const carpicture = e.target.picture.value;
 
     const brand = { name, brandname, type, price, description, carpicture };
-    fetch("https://car-server-site-nine.vercel.app/brand", {
-      method: "POST",
+    fetch(`https://car-server-site-nine.vercel.app/brand/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -20,10 +24,10 @@ const Addtoproduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "success!",
-            text: "user added successfully",
+            text: "user updated successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -31,17 +35,19 @@ const Addtoproduct = () => {
       });
   };
 
+  const { name, brandname, price, type, description, carpicture, _id } = carts;
   return (
     <div className="hero min-h-screen bg-gray-300">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card flex-shrink-0  max-w-sm   shadow-2xl bg-base-200">
-          <form onSubmit={handlesubmit} className="card-body">
+          <form onSubmit={handleupdate} className="card-body">
             <div className="flex gap-4">
               <label className="label">
                 <span className="label-text">Name : </span>
               </label>
               <input
                 type="name"
+                defaultValue={name}
                 placeholder="name"
                 name="name"
                 className="input input-bordered"
@@ -54,6 +60,7 @@ const Addtoproduct = () => {
               </label>
               <input
                 type="text"
+                defaultValue={brandname}
                 placeholder=" brand-name"
                 name="brandname"
                 className="input input-bordered"
@@ -66,6 +73,7 @@ const Addtoproduct = () => {
               </label>
               <input
                 type="text"
+                defaultValue={type}
                 placeholder="Type"
                 name="type"
                 className="input input-bordered"
@@ -78,6 +86,7 @@ const Addtoproduct = () => {
               </label>
               <input
                 type="text"
+                defaultValue={price}
                 placeholder="price"
                 name="price"
                 className="input input-bordered"
@@ -88,6 +97,7 @@ const Addtoproduct = () => {
               </label>
               <input
                 type="text"
+                defaultValue={description}
                 placeholder="Description"
                 name="description"
                 className="input input-bordered"
@@ -100,6 +110,7 @@ const Addtoproduct = () => {
               </label>
               <input
                 type="text"
+                defaultValue={carpicture}
                 name="picture"
                 placeholder=" please ! put a car pic url link "
                 className="input  input-bordered"
@@ -108,7 +119,7 @@ const Addtoproduct = () => {
 
             <div className="form-control mt-6">
               <button className="btn btn-primary">
-                <input type="submit" value="Add to Curt" />
+                <input type="submit" value="update information" />
               </button>
             </div>
           </form>
@@ -118,4 +129,4 @@ const Addtoproduct = () => {
   );
 };
 
-export default Addtoproduct;
+export default Updattedcart;

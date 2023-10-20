@@ -38,7 +38,11 @@ const Carddetails = () => {
 
     return (
      <div>
+
          <Slider></Slider>
+
+          <p className="flex justify-center text-4xl my-3 text-red-600 font-mono font-bold ">Welcome to Car-superior  </p> 
+           
 
          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
            {

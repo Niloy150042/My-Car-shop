@@ -1,75 +1,91 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Addtoproduct from "./components/Addtoproduct.jsx";
+import Banner from "./components/Banner.jsx";
+import Cards from "./components/Cards.jsx";
+import Home from "./components/Home.jsx";
+import My_cart from "./components/My_cart.jsx";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Home from './components/Home.jsx';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
-import Banner from './components/Banner.jsx';
-import Cards from './components/Cards.jsx';
-import My_cart from './components/My_cart.jsx';
-import Addtoproduct from './components/Addtoproduct.jsx';
-
-
-import Carddetails from './components/Carddetails.jsx';
-import Details from './components/Details.jsx';
-import Errorpage from './components/Errorpage.jsx';
+import Carddetails from "./components/Carddetails.jsx";
+import Details from "./components/Details.jsx";
+import Errorpage from "./components/Errorpage.jsx";
+import Log_in from "./components/Log_in/sign_up.jsx";
+import Authprovider from "./components/providers/Authprovider.jsx";
+import Updattedcart from "./components/Updattedcart.jsx";
+import Privateroute from "./Privateroute.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    children:[
-    
+    children: [
+      {
+        path: "/",
+        element: <Banner></Banner>,
+      },
+      {
+        path: "/",
+        element: <Cards></Cards>,
+      },
+      {
+        path: "/cart",
+        element: (
+          <Privateroute>
+            <My_cart></My_cart>
+          </Privateroute>
+        ),
+        loader: () => fetch("https://car-server-site-nine.vercel.app/carts"),
+      },
+      {
+        path: "/addproduct",
+        element: (
+          <Privateroute>
+            <Addtoproduct></Addtoproduct>
+          </Privateroute>
+        ),
+      },
 
-     {
-      path:'/',
-      element:<Banner></Banner>
-     },
-     {
-       path:'/',
-       element:<Cards></Cards>
-     },
-     {
-      path:'/cart',
-      element:<My_cart></My_cart>
-     },
-     {
-      path:'/addproduct',
-      element:<Addtoproduct></Addtoproduct>
-     },
-     
+      {
+        path: "/card/:title",
+        element: <Carddetails></Carddetails>,
+        loader: () => fetch("https://car-server-site-nine.vercel.app/brand"),
+      },
+      {
+        path: "/details/:_id",
+        element: <Details></Details>,
+        loader: () => fetch("https://car-server-site-nine.vercel.app/brand"),
+      },
+      {
+        path: "/updattedcart/:id",
+        element: (
+          <Privateroute>
+            <Updattedcart></Updattedcart>
+          </Privateroute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://car-server-site-nine.vercel.app/carts/${params.id}`),
+      },
 
-
-     {
-      path:'/card/:title',
-      element:<Carddetails></Carddetails>,
-      loader : ()=>fetch('http://localhost:5000/brand')
-     },
-     {
-      path:'/details/:_id',
-      element:<Details></Details>,
-      loader : ()=>fetch('http://localhost:5000/brand')
-     },
-     {
-      path:'/*',
-       element:<Errorpage></Errorpage>
-     }
-
-
-         
-    ]
+      {
+        path: "/login",
+        element: <Log_in></Log_in>,
+      },
+      {
+        path: "/*",
+        element: <Errorpage></Errorpage>,
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Authprovider>
+      {" "}
+      <RouterProvider router={router} />
+    </Authprovider>
+  </React.StrictMode>
+);

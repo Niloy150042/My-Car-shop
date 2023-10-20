@@ -1,4 +1,6 @@
 import Cards from "./Cards";
+import Extrasection1 from "./Extrasection1";
+import Extrasection2 from "./Extrasection2";
 
 const Banner = () => {
     return (
@@ -17,7 +19,8 @@ const Banner = () => {
       </div>
 
   
-      
+      <Extrasection1></Extrasection1>
+      <Extrasection2></Extrasection2>
       <Cards></Cards>
       </div>
      

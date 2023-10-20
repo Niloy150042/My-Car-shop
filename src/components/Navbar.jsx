@@ -1,7 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Authcontext } from "./providers/Authprovider";
 
 
 const Navbar = () => {
+
+
+  const {user,logout}=useContext(Authcontext)
+
+  const handlesignout =()=>{
+
+    logout()
+    .then()
+    .catch()
+
+
+  }
+
     return (
         <div className="navbar bg-[url('https://i.ibb.co/DYHfw6m/photo-1611566026373-c6c8da0ea861.jpg')] bg-no-repeat lg:w-full  bg-cover mb-3 shadow-2xl shadow-black rounded-sm">
   <div className="navbar-start">
@@ -35,10 +50,14 @@ const Navbar = () => {
   <div className="navbar-end flex gap-3 ">
 
   
-          <img src="/src/components/niloy profile pic.jpg" className="rounded-full h-[40px]"/>
+         {
+          user? <img src="https://i.ibb.co/MNGKG3P/niloy-profile-pic.jpg" className="rounded-full h-[40px]"/>:<img className="rounded-full h-[40px]" src="https://i.ibb.co/Jt2XCnT/1000-F-199454533-GIBKQvb-UBlu0hl5xhn64p-JOHp1nn5-W2-C.jpg" alt=""></img>
+         }
         
 
-    <a className="btn bg-gray-400">Log-in</a>
+  {
+    user?<button onClick={handlesignout} className="btn btn-secondary">Log-out</button>:<Link to={'/login'}><a className="btn bg-gray-400">Sign-in</a></Link>
+  }
   </div>
 </div>
  
